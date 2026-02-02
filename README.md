@@ -21,3 +21,7 @@ Lewis Muithya
 1. Clone the repository:
    ```bash
    git clone https://github.com/lewismuithya-stack/Akannamegenerator.git
+
+## Deployment
+This project is deployed using **GitHub Pages**.  
+Live site: [https://lewismuithya-stack.github.io/Akannamegenerator/](https://lewismuithya-stack.github.io/Akannamegenerator/)
