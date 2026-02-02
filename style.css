@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
@@ -16,97 +15,120 @@ body {
     align-items: center;
 }
 
+/* Card container */
 .container {
-    max-width: 600px;
     width: 90%;
+    max-width: 900px;
     background: #ffffff;
-    padding: 40px;
-    border-radius: 16px;
+    padding: 50px;
+    border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.2);
     animation: fadeIn 0.8s ease-in-out;
 }
 
+/* Title */
 h1 {
     text-align: center;
     color: #1e3c72;
-    margin-bottom: 10px;
-    font-size: 2.2em;
+    margin-bottom: 15px;
+    font-size: 2.5em;
     font-weight: 700;
 }
 
 p {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
     color: #555;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
+/* Form styling */
 form {
     display: flex;
     flex-direction: column;
+    gap: 30px;
+}
+
+/* Inputs row */
+.input-row {
+    display: flex;
+    justify-content: space-between;
     gap: 20px;
 }
 
-label {
-    font-weight: 600;
-    color: #333;
-}
-
-input[type="number"] {
-    padding: 12px;
+.input-row input {
+    flex: 1;
+    padding: 20px;
+    font-size: 1.2em;
     border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    font-size: 1em;
+    border-radius: 12px;
+    transition: all 0.3s ease;
 }
 
-input[type="number"]:focus {
+.input-row input:hover {
+    box-shadow: 0 8px 20px rgba(42,82,152,0.2);
+}
+
+.input-row input:focus {
     border-color: #2a5298;
-    box-shadow: 0 0 8px rgba(42,82,152,0.3);
+    box-shadow: 0 0 12px rgba(42,82,152,0.3);
     outline: none;
 }
 
+/* Gender row */
 .gender {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 10px;
+    justify-content: center;
+    gap: 40px;
+    font-size: 1.2em;
 }
 
 .gender label {
-    font-weight: 500;
     cursor: pointer;
-    color: #444;
+    font-weight: 600;
+    color: #333;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 12px;
 }
 
+.gender label:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Button styling */
 button {
-    padding: 14px;
+    padding: 18px;
     background: linear-gradient(135deg, #2a5298, #1e3c72);
     color: white;
-    font-size: 1.1em;
+    font-size: 1.3em;
     font-weight: 600;
     border: none;
-    border-radius: 10px;
+    border-radius: 14px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.3s;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(30,60,114,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30,60,114,0.4);
 }
 
+/* Result box */
 #result {
-    margin-top: 30px;
-    font-size: 1.4em;
+    margin-top: 40px;
+    font-size: 1.6em;
     text-align: center;
     font-weight: 600;
     color: #2a5298;
     background: #f5f8ff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: inset 0 0 12px rgba(42,82,152,0.15);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: inset 0 0 15px rgba(42,82,152,0.15);
 }
 
+/* Animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
