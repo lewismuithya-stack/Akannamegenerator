@@ -127,7 +127,6 @@ button:hover {
     border-radius: 18px;
     box-shadow: inset 0 0 18px rgba(255,106,0,0.2);
     opacity: 0;
-    animation: fadeInResult 0.8s ease forwards;
 }
 
 .footer {
