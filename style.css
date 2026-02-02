@@ -1,62 +1,113 @@
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f9;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #1e3c72, #2a5298);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    max-width: 500px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 90%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease-in-out;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 2.2em;
+    font-weight: 700;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #555;
+    font-size: 1.1em;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 label {
-    margin-top: 10px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #333;
 }
 
 input[type="number"] {
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1em;
+}
+
+input[type="number"]:focus {
+    border-color: #2a5298;
+    box-shadow: 0 0 8px rgba(42,82,152,0.3);
+    outline: none;
 }
 
 .gender {
-    margin-top: 15px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.gender label {
+    font-weight: 500;
+    cursor: pointer;
+    color: #444;
 }
 
 button {
-    margin-top: 20px;
-    padding: 10px;
-    background: #4CAF50;
+    padding: 14px;
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
     color: white;
+    font-size: 1.1em;
+    font-weight: 600;
     border: none;
-    border-radius: 4px;
+    border-radius: 10px;
     cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.3s;
 }
 
 button:hover {
-    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30,60,114,0.4);
 }
 
 #result {
-    margin-top: 20px;
-    font-size: 1.2em;
+    margin-top: 30px;
+    font-size: 1.4em;
     text-align: center;
-    color: #2c3e50;
+    font-weight: 600;
+    color: #2a5298;
+    background: #f5f8ff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: inset 0 0 12px rgba(42,82,152,0.15);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
