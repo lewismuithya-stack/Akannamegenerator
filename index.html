@@ -7,33 +7,36 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
+  <header class="header">
     <h1>Akan Name Generator</h1>
-    <p>Enter your birthdate and gender to discover your Akan name.</p>
+    <p>Discover your Akan name based on the day you were born.</p>
+  </header>
 
+  <section class="form-section">
     <form id="akanForm">
-      
       <div class="input-row">
         <input type="number" id="day" name="day" placeholder="Day" min="1" max="31" required>
         <input type="number" id="month" name="month" placeholder="Month" min="1" max="12" required>
         <input type="number" id="year" name="year" placeholder="Year" required>
       </div>
 
-      
       <div class="gender">
         <label><input type="radio" name="gender" value="male"> Male</label>
         <label><input type="radio" name="gender" value="female"> Female</label>
       </div>
 
-      
       <button type="button" onclick="generateAkanName()">Get Akan Name</button>
     </form>
+  </section>
 
-    
+  <section class="result-section">
     <div id="result"></div>
-  </div>
+  </section>
+
+  <footer class="footer">
+    <p>Created by Lewis Muithya | © 2026</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
