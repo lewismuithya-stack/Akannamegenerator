@@ -1,29 +1,26 @@
-document.getElementById("akanForm").addEventListener("submit", function(event) {
-  event.preventDefault();
+function generateAkanName(){
+    let day = parseInt(document.getElementById("day").value);
+    let month = parseInt(document.getElementById("month").value);
+    let year = parseInt(document.getElementById("year").value);
+    let gender = document.querySelector('input[name="gender"]:checked');
 
-  const dateInput = document.getElementById("date").value;
-  const gender = document.getElementById("gender").value;
+    if(!gender || day < 1 || day > 31 || month < 1 || month > 12){
+        alert("Please enter a valid date and select gender.");
+        return;
+    }
 
-  if (!dateInput || !gender) {
-    alert("Please enter a valid date and select gender.");
-    return;
-  }
+    let birthDate = new Date(year, month - 1, day);
+    let dayOfWeek = birthDate.getDay();
 
-  const birthDate = new Date(dateInput);
-  const dayOfWeek = birthDate.getDay();
+    let maleNames = ["Kwasi","Kwadwo","Kwabena","Kwaku","Yaw","Kofi","Kwame"];
+    let femaleNames = ["Akosua","Adwoa","Abenaa","Akua","Yaa","Afua","Ama"];
 
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-  const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+    let akanName = gender.value === "male" ? maleNames[dayOfWeek] : femaleNames[dayOfWeek];
 
-  let akanName;
-  if (gender === "male") {
-    akanName = maleNames[dayOfWeek];
-  } else {
-    akanName = femaleNames[dayOfWeek];
-  }
+    let resultBox = document.getElementById("result");
+    resultBox.innerText = "Your Akan name is: " + akanName;
 
-  const dayName = days[dayOfWeek];
-  document.getElementById("result").innerText = 
-    `You were born on a ${dayName}. Your Akan name is: ${akanName}`;
-});
+    resultBox.style.animation = "none";
+    resultBox.offsetHeight;
+    resultBox.style.animation = "fadeInResult 0.8s ease forwards";
+}
